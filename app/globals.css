@@ -1,42 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --background: #f5f5f5;
+  --paper-bg: #ffffff;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --border-color: #000000;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, sans-serif;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+.resume-page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 2rem auto;
+  background: var(--paper-bg);
+  padding: 15mm;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+@media print {
+  body {
+    background: none;
   }
+
+  .resume-page {
+    margin: 0;
+    box-shadow: none;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+h1 {
+  font-size: 24pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 8pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  font-size: 7pt;
+  margin-bottom: 10px;
+}
+
+.divider {
+  border-bottom: 1.5px solid var(--border-color);
+  margin-bottom: 15px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: 28% 2% 70%;
+}
+
+.left-col {
+  padding-right: 15px;
+}
+
+.vertical-divider {
+  border-left: 1.5px solid #000000;
+  height: 100%;
+}
+
+.right-col {
+  padding-left: 15px;
+}
+
+section {
+  margin-bottom: 18px;
+}
+
+h2 {
+  font-size: 14pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  border-bottom: 1.5px solid #000000;
+  padding-bottom: 2px;
+}
+
+h3 {
+  font-size: 10pt;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.section-content {
+  font-size: 8.5pt;
+  text-align: justify;
+}
+
+ul {
+  list-style: none;
+}
+
+.bullet-list li {
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 3px;
+  font-size: 8.5pt;
+}
+
+.bullet-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.date-text {
+  font-weight: 800;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+}
+
+.tech-stack {
+  font-size: 7pt;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.project-item,
+.edu-item {
+  margin-bottom: 12px;
+}
+
+.skills-category {
+  margin-bottom: 8px;
+}
+
+.skills-category strong {
+  display: block;
+  font-size: 9pt;
+  font-weight: 800;
+}
+
+.indent {
+  padding-left: 10px;
 }
